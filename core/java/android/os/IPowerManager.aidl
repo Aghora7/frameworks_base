@@ -172,4 +172,5 @@ interface IPowerManager
 
     // DerpFest custom API
     void wakeUpWithProximityCheck(long time, int reason, String details, String opPackageName);
+    void rebootCustom(boolean confirm, String reason, boolean wait);
 }
