@@ -33,4 +33,9 @@
 
     <!-- Name of the firewall status bar icon. -->
     <string name="status_bar_firewall">Firewall</string>
+
+    <!-- Label for area where tiles can be added to the qs panel -->
+    <string name="drag_or_tap_to_add_tiles">Halten &amp; ziehen oder tippen zum Hinzufügen</string>
+    <!-- Label for the area where tiles can be dragged in to remove -->
+    <string name="drag_or_tap_to_remove_tiles">Halten &amp; ziehen oder tippen zum Entfernen</string>
 </resources>
