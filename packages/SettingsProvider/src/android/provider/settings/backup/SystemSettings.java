@@ -115,7 +115,10 @@ public class SystemSettings {
                 Settings.System.SCREEN_FLASH_NOTIFICATION_COLOR,
                 Settings.System.NOTIFICATION_COOLDOWN_ENABLED,
                 Settings.System.NOTIFICATION_COOLDOWN_ALL,
-                Settings.System.NOTIFICATION_COOLDOWN_VIBRATE_UNLOCKED
+                Settings.System.NOTIFICATION_COOLDOWN_VIBRATE_UNLOCKED,
+                Settings.System.QS_SHOW_BATTERY_ESTIMATE,
+                Settings.System.STATUS_BAR_BATTERY_STYLE,
+                Settings.System.SHOW_BATTERY_PERCENT_INSIDE
         ));
         if (Flags.backUpSmoothDisplayAndForcePeakRefreshRate()) {
             settings.add(Settings.System.PEAK_REFRESH_RATE);
