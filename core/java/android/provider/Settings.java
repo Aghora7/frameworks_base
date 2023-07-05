@@ -12671,15 +12671,28 @@ public final class Settings {
         public static final String STYLUS_POINTER_ICON_ENABLED = "stylus_pointer_icon_enabled";
 
         /**
-         * Wheter to show network traffic indicator in statusbar
+         * Whether or not to hide the network traffic indicator
          * @hide
          */
-        public static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
+        public static final String NETWORK_TRAFFIC_MODE = "network_traffic_mode";
+
         /**
-         * Network traffic inactivity threshold
+         * Whether or not to hide the network traffic indicator when there is no activity
          * @hide
          */
-        public static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
+        public static final String NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide";
+
+        /**
+         * Measurement unit preference for network traffic
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_UNITS = "network_traffic_units";
+
+        /**
+         * Whether or not to show measurement units in the network traffic indiciator
+         * @hide
+         */
+        public static final String NETWORK_TRAFFIC_SHOW_UNITS = "network_traffic_show_units";
 
         /**
          * These entries are considered common between the personal and the managed profile,
