@@ -70,4 +70,8 @@
     <string name="screenrecord_skip_time_summary">3 Sekunden Wartezeit deaktivieren</string>
     <string name="screenrecord_hevc_switch_label">HEVC-Kodierung</string>
     <string name="screenrecord_hevc_switch_summary">Effizienteren HEVC-Codec verwenden</string>
+
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G-Symbol</string>
+    <string name="show_fourg_icon_summary">4G-Symbol anstelle von LTE anzeigen</string>
 </resources>
