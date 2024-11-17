@@ -56,10 +56,10 @@ import static android.media.audio.Flags.scoManagedByAudio;
 import static android.media.audiopolicy.Flags.enableFadeManagerConfiguration;
 import static android.os.Process.FIRST_APPLICATION_UID;
 import static android.os.Process.INVALID_UID;
-import static android.provider.Settings.Secure.DERP_VOLUME_HUSH_NORMAL;
-import static android.provider.Settings.Secure.DERP_VOLUME_HUSH_MUTE;
-import static android.provider.Settings.Secure.DERP_VOLUME_HUSH_OFF;
-import static android.provider.Settings.Secure.DERP_VOLUME_HUSH_VIBRATE;
+import static android.provider.Settings.Secure.LESSAOSP_VOLUME_HUSH_NORMAL;
+import static android.provider.Settings.Secure.LESSAOSP_VOLUME_HUSH_MUTE;
+import static android.provider.Settings.Secure.LESSAOSP_VOLUME_HUSH_OFF;
+import static android.provider.Settings.Secure.LESSAOSP_VOLUME_HUSH_VIBRATE;
 
 import static com.android.internal.annotations.VisibleForTesting.Visibility.PACKAGE;
 import static com.android.media.audio.Flags.absVolumeIndexFix;
@@ -5656,7 +5656,7 @@ public class AudioService extends IAudioService.Stub
     public void silenceRingerModeInternal(String reason) {
         String settingsValue = Settings.Secure.getStringForUser(mContentResolver,
                 Settings.Secure.VOLUME_HUSH_GESTURE, UserHandle.USER_CURRENT);
-        if (settingsValue == null) settingsValue = DERP_VOLUME_HUSH_OFF;
+        if (settingsValue == null) settingsValue = LESSAOSP_VOLUME_HUSH_OFF;
         if (settingsValue.length() == 1)
             return; // no migration to new settings done, assume off
         final List<String> silenceRingerSetting = Arrays.asList(settingsValue.split(",", 0));
@@ -5664,15 +5664,15 @@ public class AudioService extends IAudioService.Stub
                 .getBoolean(com.android.internal.R.bool.config_volumeHushGestureEnabled))
             return; // disabled by overlay
 
-        if (settingsValue == DERP_VOLUME_HUSH_OFF)
+        if (settingsValue == LESSAOSP_VOLUME_HUSH_OFF)
             return; // disabled by user
 
         // Cycle through enabled modes
         // Order: normal -> vibrate -> silent
         SparseArray<String> modeArr = new SparseArray<String>(3);
-        modeArr.put(AudioManager.RINGER_MODE_NORMAL, DERP_VOLUME_HUSH_NORMAL);
-        modeArr.put(AudioManager.RINGER_MODE_VIBRATE, DERP_VOLUME_HUSH_VIBRATE);
-        modeArr.put(AudioManager.RINGER_MODE_SILENT, DERP_VOLUME_HUSH_MUTE);
+        modeArr.put(AudioManager.RINGER_MODE_NORMAL, LESSAOSP_VOLUME_HUSH_NORMAL);
+        modeArr.put(AudioManager.RINGER_MODE_VIBRATE, LESSAOSP_VOLUME_HUSH_VIBRATE);
+        modeArr.put(AudioManager.RINGER_MODE_SILENT, LESSAOSP_VOLUME_HUSH_MUTE);
 
         int index = -1;
         if (silenceRingerSetting.size() == 1) {

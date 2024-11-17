@@ -226,13 +226,13 @@ public class SecureSettingsValidators {
                 new Validator() {
                     @Override
                     public boolean validate(String value) {
-                        if (value.equals(Secure.DERP_VOLUME_HUSH_OFF))
+                        if (value.equals(Secure.LESSAOSP_VOLUME_HUSH_OFF))
                             return true;
                         String[] args = value.split(",", 0);
                         for (String str : args) {
-                            if (!str.equals(Secure.DERP_VOLUME_HUSH_NORMAL) &&
-                                !str.equals(Secure.DERP_VOLUME_HUSH_MUTE) &&
-                                !str.equals(Secure.DERP_VOLUME_HUSH_VIBRATE))
+                            if (!str.equals(Secure.LESSAOSP_VOLUME_HUSH_NORMAL) &&
+                                !str.equals(Secure.LESSAOSP_VOLUME_HUSH_MUTE) &&
+                                !str.equals(Secure.LESSAOSP_VOLUME_HUSH_VIBRATE))
                                 return false;
                         }
                         return true;

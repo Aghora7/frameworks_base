@@ -3896,7 +3896,7 @@ public class SettingsProvider extends ContentProvider {
                 final int oldVersion = secureSettings.getVersionLocked();
                 final int newVersion = SETTINGS_VERSION;
 
-                DerpFestSettingsProvider.onPreUpgradeLocked(mUserId, getContext(), getSystemSettingsLocked(mUserId),
+                LESSAOSPSettingsProvider.onPreUpgradeLocked(mUserId, getContext(), getSystemSettingsLocked(mUserId),
                         getSecureSettingsLocked(mUserId), getGlobalSettingsLocked());
 
                 // If up do date - done.
@@ -4642,7 +4642,7 @@ public class SettingsProvider extends ContentProvider {
                             Secure.VOLUME_HUSH_GESTURE);
                     if (currentSetting.isNull()) {
                         secureSettings.insertSettingOverrideableByRestoreLocked(
-                                Secure.VOLUME_HUSH_GESTURE, Secure.DERP_VOLUME_HUSH_VIBRATE,
+                                Secure.VOLUME_HUSH_GESTURE, Secure.LESSAOSP_VOLUME_HUSH_VIBRATE,
                                 null, true, SettingsState.SYSTEM_PACKAGE_NAME);
                     }
 
@@ -5894,7 +5894,7 @@ public class SettingsProvider extends ContentProvider {
                                 true /* makeDefault */,
                                 SettingsState.SYSTEM_PACKAGE_NAME);
                     }
-                    DerpFestSettingsProvider.loadRestrictedNetworkingModeSetting(getContext(), getGlobalSettingsLocked()); // This is a hack
+                    LESSAOSPSettingsProvider.loadRestrictedNetworkingModeSetting(getContext(), getGlobalSettingsLocked()); // This is a hack
 
                     // Following init logic is moved from version 212 to this version in order to
                     // resolve version conflict with wear branch.

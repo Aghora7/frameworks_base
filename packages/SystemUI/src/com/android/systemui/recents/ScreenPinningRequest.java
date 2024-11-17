@@ -69,7 +69,7 @@ import com.android.systemui.statusbar.policy.ConfigurationController;
 import com.android.systemui.util.leak.RotationUtils;
 
 import android.provider.Settings;
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import dagger.Lazy;
 
@@ -359,7 +359,7 @@ public class ScreenPinningRequest implements
         private boolean hasSoftNavigationBar(Context context, int displayId) {
             if (displayId == DEFAULT_DISPLAY &&
                     Settings.System.getIntForUser(context.getContentResolver(),
-                            DerpFestSettings.System.FORCE_SHOW_NAVBAR, 0,
+                            LESSAOSPSettings.System.FORCE_SHOW_NAVBAR, 0,
                             UserHandle.USER_CURRENT) == 1) {
                 return true;
             }

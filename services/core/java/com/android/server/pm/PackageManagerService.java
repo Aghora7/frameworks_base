@@ -212,7 +212,7 @@ import com.android.server.art.DexUseManagerLocal;
 import com.android.server.art.model.DeleteResult;
 import com.android.server.compat.CompatChange;
 import com.android.server.compat.PlatformCompat;
-import com.android.server.derpfest.ParallelSpaceManagerServiceInternal;
+import com.android.server.lessaosp.ParallelSpaceManagerServiceInternal;
 import com.android.server.pm.Installer.InstallerException;
 import com.android.server.pm.Settings.VersionInfo;
 import com.android.server.pm.dex.ArtManagerService;

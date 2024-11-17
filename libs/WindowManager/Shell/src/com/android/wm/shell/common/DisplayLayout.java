@@ -48,7 +48,7 @@ import androidx.annotation.VisibleForTesting;
 import com.android.internal.R;
 import com.android.internal.policy.SystemBarUtils;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -394,7 +394,7 @@ public class DisplayLayout {
     static boolean hasNavigationBar(DisplayInfo info, Context context, int displayId) {
         if (displayId == Display.DEFAULT_DISPLAY) {
             if (Settings.System.getIntForUser(context.getContentResolver(),
-                    DerpFestSettings.System.FORCE_SHOW_NAVBAR, 0,
+                    LESSAOSPSettings.System.FORCE_SHOW_NAVBAR, 0,
                     UserHandle.USER_CURRENT) == 1) {
                 return true;
             }

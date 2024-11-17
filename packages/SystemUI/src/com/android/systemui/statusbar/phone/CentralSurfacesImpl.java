@@ -250,7 +250,7 @@ import dalvik.annotation.optimization.NeverCompile;
 
 import dagger.Lazy;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -911,8 +911,8 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces,
             mNeedsNavigationBar = true;
         }
 
-        Uri forceShowNavbar = Settings.System.getUriFor(DerpFestSettings.System.FORCE_SHOW_NAVBAR);
-        Uri qsTransparency = Settings.System.getUriFor(DerpFestSettings.System.QS_TRANSPARENCY);
+        Uri forceShowNavbar = Settings.System.getUriFor(LESSAOSPSettings.System.FORCE_SHOW_NAVBAR);
+        Uri qsTransparency = Settings.System.getUriFor(LESSAOSPSettings.System.QS_TRANSPARENCY);
         ContentObserver contentObserver = new ContentObserver(null) {
             @Override
             public void onChange(boolean selfChange, Uri uri) {
@@ -921,7 +921,7 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces,
                             && mWindowManagerService != null) {
                         boolean forcedVisibility = mNeedsNavigationBar || Settings.System.getInt(
                                 mContext.getContentResolver(),
-                                DerpFestSettings.System.FORCE_SHOW_NAVBAR, 0) != 0;
+                                LESSAOSPSettings.System.FORCE_SHOW_NAVBAR, 0) != 0;
                         boolean hasNavbar = getNavigationBarView() != null;
                         mContext.getMainExecutor().execute(() -> {
                             if (forcedVisibility) {
@@ -937,7 +937,7 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces,
                     }
                 } else if (uri.equals(qsTransparency)) {
                     int newValue = Settings.System.getIntForUser(mContext.getContentResolver(),
-                            DerpFestSettings.System.QS_TRANSPARENCY,
+                            LESSAOSPSettings.System.QS_TRANSPARENCY,
                             mContext.getResources().getInteger(com.android.internal.R.integer.config_qs_transparency),
                             UserHandle.USER_CURRENT);
                     mContext.getMainExecutor().execute(() -> {
@@ -1522,7 +1522,7 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces,
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
         filter.addAction(Intent.ACTION_SCREEN_OFF);
-        filter.addAction(org.derpfest.content.Intent.ACTION_SCREEN_CAMERA_GESTURE);
+        filter.addAction(org.lessaosp.content.Intent.ACTION_SCREEN_CAMERA_GESTURE);
         mBroadcastDispatcher.registerReceiver(mBroadcastReceiver, filter, null, UserHandle.ALL);
         mGameSpaceManager.observe();
     }
@@ -2016,7 +2016,7 @@ public class CentralSurfacesImpl implements CoreStartable, CentralSurfaces,
                 }
                 finishBarAnimations();
                 mNotificationsController.resetUserExpandedStates();
-            } else if (org.derpfest.content.Intent.ACTION_SCREEN_CAMERA_GESTURE.equals(action)) {
+            } else if (org.lessaosp.content.Intent.ACTION_SCREEN_CAMERA_GESTURE.equals(action)) {
                 boolean userSetupComplete = Settings.Secure.getInt(mContext.getContentResolver(),
                         Settings.Secure.USER_SETUP_COMPLETE, 0) != 0;
                 if (!userSetupComplete) {

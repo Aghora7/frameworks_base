@@ -31,7 +31,7 @@ import android.os.UserManager
 import android.util.Log
 import androidx.annotation.GuardedBy
 import androidx.annotation.WorkerThread
-import org.derpfest.app.ParallelSpaceManager;
+import org.lessaosp.app.ParallelSpaceManager;
 import com.android.systemui.Dumpable
 import com.android.systemui.dump.DumpManager
 import com.android.systemui.flags.FeatureFlagsClassic
@@ -145,7 +145,7 @@ open class UserTrackerImpl internal constructor(
             addAction(Intent.ACTION_MANAGED_PROFILE_ADDED)
             addAction(Intent.ACTION_MANAGED_PROFILE_REMOVED)
             addAction(Intent.ACTION_MANAGED_PROFILE_UNLOCKED)
-            addAction(org.derpfest.content.Intent.ACTION_PARALLEL_SPACE_CHANGED)
+            addAction(org.lessaosp.content.Intent.ACTION_PARALLEL_SPACE_CHANGED)
         }
         context.registerReceiverForAllUsers(this, filter, null, backgroundHandler,
                 Context.RECEIVER_EXPORTED)
@@ -168,7 +168,7 @@ open class UserTrackerImpl internal constructor(
             Intent.ACTION_PROFILE_REMOVED,
             Intent.ACTION_PROFILE_AVAILABLE,
             Intent.ACTION_PROFILE_UNAVAILABLE,
-            org.derpfest.content.Intent.ACTION_PARALLEL_SPACE_CHANGED -> {
+            org.lessaosp.content.Intent.ACTION_PARALLEL_SPACE_CHANGED -> {
                 handleProfilesChanged()
             }
         }

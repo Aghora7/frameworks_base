@@ -147,7 +147,7 @@ import com.android.systemui.volume.ui.navigation.VolumeNavigator;
 
 import dagger.Lazy;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -405,7 +405,7 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
                 public void onChange(boolean selfChange) {
                     final boolean volumePanelOnLeft = Settings.Secure.getInt(
                             mContext.getContentResolver(),
-                            DerpFestSettings.Secure.VOLUME_PANEL_ON_LEFT, 0) != 0;
+                            LESSAOSPSettings.Secure.VOLUME_PANEL_ON_LEFT, 0) != 0;
                     if (mVolumePanelOnLeft != volumePanelOnLeft) {
                         mVolumePanelOnLeft = volumePanelOnLeft;
                         mHandler.post(mControllerCallbackH::onConfigurationChanged);
@@ -413,7 +413,7 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
                 }
             };
             mContext.getContentResolver().registerContentObserver(
-                    Settings.Secure.getUriFor(DerpFestSettings.Secure.VOLUME_PANEL_ON_LEFT),
+                    Settings.Secure.getUriFor(LESSAOSPSettings.Secure.VOLUME_PANEL_ON_LEFT),
                     false, volumePanelOnLeftObserver);
             volumePanelOnLeftObserver.onChange(true);
         }
@@ -1342,7 +1342,7 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
 
     private boolean shouldShowAppVolume() {
         ContentResolver cr = mContext.getContentResolver();
-        int showAppVolume = Settings.System.getIntForUser(cr, DerpFestSettings.System.SHOW_APP_VOLUME,
+        int showAppVolume = Settings.System.getIntForUser(cr, LESSAOSPSettings.System.SHOW_APP_VOLUME,
                 0, UserHandle.USER_CURRENT);
         if (showAppVolume == 1) {
             AudioManager audioManager = mController.getAudioManager();

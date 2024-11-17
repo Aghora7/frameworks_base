@@ -162,7 +162,7 @@ import com.android.server.LocalServices;
 import com.android.server.LockGuard;
 import com.android.server.SystemService;
 import com.android.server.am.UserState;
-import com.android.server.derpfest.ParallelSpaceManagerServiceInternal;
+import com.android.server.lessaosp.ParallelSpaceManagerServiceInternal;
 import com.android.server.pm.UserManagerInternal.UserLifecycleListener;
 import com.android.server.pm.UserManagerInternal.UserRestrictionsListener;
 import com.android.server.storage.DeviceStorageMonitorInternal;

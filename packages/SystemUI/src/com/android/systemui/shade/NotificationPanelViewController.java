@@ -160,7 +160,7 @@ import com.android.systemui.keyguard.ui.viewmodel.LockscreenToDreamingTransition
 import com.android.systemui.keyguard.ui.viewmodel.LockscreenToOccludedTransitionViewModel;
 import com.android.systemui.keyguard.ui.viewmodel.OccludedToLockscreenTransitionViewModel;
 import com.android.systemui.keyguard.ui.viewmodel.PrimaryBouncerToGoneTransitionViewModel;
-import com.android.systemui.derpfest.pulselight.PulseLightView;
+import com.android.systemui.lessaosp.pulselight.PulseLightView;
 import com.android.systemui.media.controls.domain.pipeline.MediaDataManager;
 import com.android.systemui.media.controls.ui.controller.KeyguardMediaController;
 import com.android.systemui.media.controls.ui.controller.MediaHierarchyManager;
@@ -250,7 +250,7 @@ import com.android.systemui.util.Utils;
 import com.android.systemui.util.time.SystemClock;
 import com.android.wm.shell.animation.FlingAnimationUtils;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import dalvik.annotation.optimization.NeverCompile;
 
@@ -986,7 +986,7 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
             @Override
             public void onChange(boolean selfChange) {
                 mDoubleTapToSleepEnabled = Settings.System.getInt(mContentResolver,
-                        DerpFestSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
+                        LESSAOSPSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
                         mResources.getBoolean(com.android.internal.R.bool.
                                 config_dt2sGestureEnabledByDefault) ? 1 : 0) != 0;
             }
@@ -3384,7 +3384,7 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
 
     private boolean isPulseLightEnabled() {
         return Settings.Secure.getIntForUser(mView.getContext().getContentResolver(),
-                DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT) != 0;
+                LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT) != 0;
     }
 
     @Override
@@ -4806,7 +4806,7 @@ public final class NotificationPanelViewController implements ShadeSurface, Dump
             }
             mConfigurationController.addCallback(mConfigurationListener);
             mContentResolver.registerContentObserver(Settings.System.getUriFor(
-                    DerpFestSettings.System.DOUBLE_TAP_SLEEP_GESTURE), false,
+                    LESSAOSPSettings.System.DOUBLE_TAP_SLEEP_GESTURE), false,
                     mDoubleTapToSleepObserver);
             mDoubleTapToSleepObserver.onChange(true);
             mTunerService.addTunable(this, ISLAND_NOTIFICATION);

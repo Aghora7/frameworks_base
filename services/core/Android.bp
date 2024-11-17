@@ -229,7 +229,7 @@ java_library_static {
         "dreams_flags_lib",
         "aconfig_new_storage_flags_lib",
         "powerstats_flags_lib",
-        "framework-derpfest.static",
+        "framework-lessaosp.static",
         "vendor.aac.hardware.richtap.vibrator",
         "vendor.aospa.biometrics.face",
     ],

@@ -96,9 +96,9 @@ public class NavigationBarInflaterView extends FrameLayout implements TunerServi
     private static final String KEY_KEYBOARD_NO_NAVIGATION =
             Settings.Secure.KEYBOARD_NO_NAVIGATION_BAR;
     private static final String OVERLAY_NAVIGATION_HIDE_HINT =
-            "org.derpfest.overlay.customization.navbar.nohint";
+            "org.lessaosp.overlay.customization.navbar.nohint";
     private static final String OVERLAY_KEYBOARD_HIDE_NAVIGATION =
-            "org.derpfest.overlay.customization.navbar.keyboard.nonavbar";
+            "org.lessaosp.overlay.customization.navbar.keyboard.nonavbar";
 
     private final ContentResolver mContentResolver;
 

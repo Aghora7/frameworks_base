@@ -77,7 +77,7 @@ import java.util.concurrent.Executor;
 
 import javax.inject.Inject;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 /**
  */
@@ -461,7 +461,7 @@ public class SecurityControllerImpl implements SecurityController {
     public void onUserSwitched(int newUserId) {
         mCurrentUserId = newUserId;
         final String globalVpnApp = Settings.Global.getString(mContext.getContentResolver(),
-                DerpFestSettings.Global.GLOBAL_VPN_APP);
+                LESSAOSPSettings.Global.GLOBAL_VPN_APP);
         final UserInfo newUserInfo = mUserManager.getUserInfo(newUserId);
         if (mCurrentVpns.get(UserHandle.USER_SYSTEM) != null &&
                 mCurrentVpns.get(UserHandle.USER_SYSTEM).user.equals(globalVpnApp)) {

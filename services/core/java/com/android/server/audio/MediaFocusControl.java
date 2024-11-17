@@ -45,7 +45,7 @@ import android.util.Log;
 import com.android.internal.annotations.GuardedBy;
 import com.android.server.utils.EventLogger;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.PrintWriter;
 import java.text.DateFormat;
@@ -1629,7 +1629,7 @@ public class MediaFocusControl implements PlayerFocusEnforcer {
             super(new Handler());
             ContentResolver cr = mContext.getContentResolver();
             cr.registerContentObserver(Settings.System.getUriFor(
-                    DerpFestSettings.System.SHOW_APP_VOLUME), true, this);
+                    LESSAOSPSettings.System.SHOW_APP_VOLUME), true, this);
         }
 
         @Override
@@ -1637,7 +1637,7 @@ public class MediaFocusControl implements PlayerFocusEnforcer {
             super.onChange(selfChange);
             ContentResolver cr = mContext.getContentResolver();
             mMultiAudioFocusEnabled = Settings.System.getIntForUser(cr,
-                    DerpFestSettings.System.SHOW_APP_VOLUME, 1, cr.getUserId()) != 0;
+                    LESSAOSPSettings.System.SHOW_APP_VOLUME, 1, cr.getUserId()) != 0;
             updateMultiAudioFocus(mMultiAudioFocusEnabled);
         }
     }

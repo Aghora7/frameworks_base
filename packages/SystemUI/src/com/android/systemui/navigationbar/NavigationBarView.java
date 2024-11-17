@@ -96,7 +96,7 @@ import com.android.wm.shell.back.BackAnimation;
 import com.android.wm.shell.pip.Pip;
 
 import android.provider.Settings;
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.PrintWriter;
 import java.util.Map;
@@ -361,7 +361,7 @@ public class NavigationBarView extends FrameLayout
             public void onChange(boolean selfChange) {
                 mShowCursorKeys = Settings.System.getInt(
                         mContext.getContentResolver(),
-                        DerpFestSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS, 0) != 0;
+                        LESSAOSPSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS, 0) != 0;
                 setNavigationIconHints(mNavigationIconHints);
             }
         };
@@ -1176,7 +1176,7 @@ public class NavigationBarView extends FrameLayout
         reorient();
 
         mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                        DerpFestSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS), false,
+                        LESSAOSPSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS), false,
                 mShowCursorKeysObserver);
         mShowCursorKeysObserver.onChange(true);
         if (mRotationButtonController != null) {

@@ -26,7 +26,7 @@ import androidx.annotation.NonNull;
 
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.widget.ViewClippingUtil;
-import com.android.systemui.derp.logo.LogoImage;
+import com.android.systemui.lessaosp.logo.LogoImage;
 import com.android.systemui.dagger.qualifiers.RootView;
 import com.android.systemui.flags.FeatureFlagsClassic;
 import com.android.systemui.plugins.DarkIconDispatcher;

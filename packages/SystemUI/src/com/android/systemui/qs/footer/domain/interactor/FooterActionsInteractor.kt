@@ -45,7 +45,7 @@ import com.android.systemui.statusbar.VibratorHelper
 import com.android.systemui.statusbar.policy.DeviceProvisionedController
 import com.android.systemui.user.data.repository.UserSwitcherRepository
 import com.android.systemui.user.domain.interactor.UserSwitcherInteractor
-import org.derpfest.providers.DerpFestSettings
+import org.lessaosp.providers.LESSAOSPSettings
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
@@ -158,7 +158,7 @@ constructor(
     ) {
         uiEventLogger.log(GlobalActionsDialogLite.GlobalActionsEvent.GA_OPEN_QS)
         if (Settings.Secure.getInt(globalActionsDialogLite.context.getContentResolver(),
-                DerpFestSettings.Secure.POWER_MENU_TYPE, 0) == 0)
+                LESSAOSPSettings.Secure.POWER_MENU_TYPE, 0) == 0)
             globalActionsDialogLite.showOrHideDialog(
                 /* keyguardShowing= */ false,
                 /* isDeviceProvisioned= */ true,

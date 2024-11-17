@@ -26,7 +26,7 @@ import static com.android.systemui.navigationbar.gestural.Utilities.isTrackpadSc
 import static com.android.systemui.navigationbar.gestural.Utilities.isTrackpadThreeFingerSwipe;
 import static com.android.systemui.shared.system.QuickStepContract.SYSUI_STATE_TOUCHPAD_GESTURES_DISABLED;
 
-import static org.derpfest.util.DeviceKeysConstants.Action;
+import static org.lessaosp.util.DeviceKeysConstants.Action;
 
 import static java.util.stream.Collectors.joining;
 
@@ -106,7 +106,7 @@ import com.android.wm.shell.desktopmode.DesktopMode;
 import com.android.wm.shell.pip.Pip;
 
 import android.provider.Settings;
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.PrintWriter;
 import java.util.ArrayDeque;
@@ -563,19 +563,19 @@ public class EdgeBackGestureHandler implements PluginListener<NavigationEdgeBack
         if (mMLEnableWidth > mEdgeWidthLeft) mMLEnableWidth = mEdgeWidthLeft;
 
         mContext.getContentResolver().registerContentObserver(
-                Settings.System.getUriFor(DerpFestSettings.System.KEY_EDGE_LONG_SWIPE_ACTION),
+                Settings.System.getUriFor(LESSAOSPSettings.System.KEY_EDGE_LONG_SWIPE_ACTION),
                 false, new ContentObserver(mUiThreadContext.getHandler()) {
                     @Override
                     public void onChange(boolean selfChange) {
                         mIsLongSwipeEnabled = Action.fromIntSafe(
                                 Settings.System.getInt(mContext.getContentResolver(),
-                                        DerpFestSettings.System.KEY_EDGE_LONG_SWIPE_ACTION,
+                                        LESSAOSPSettings.System.KEY_EDGE_LONG_SWIPE_ACTION,
                                         Action.NOTHING.ordinal())) != Action.NOTHING;
                         updateLongSwipeWidth();
                     }
                 });
         mContext.getContentResolver().notifyChange(Settings.System.getUriFor(
-                DerpFestSettings.System.KEY_EDGE_LONG_SWIPE_ACTION), null);
+                LESSAOSPSettings.System.KEY_EDGE_LONG_SWIPE_ACTION), null);
 
         // Reduce the default touch slop to ensure that we can intercept the gesture
         // before the app starts to react to it.

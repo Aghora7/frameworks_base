@@ -283,7 +283,7 @@ import com.android.server.am.PendingIntentRecord;
 import com.android.server.am.UserState;
 import com.android.server.firewall.IntentFirewall;
 import com.android.server.grammaticalinflection.GrammaticalInflectionManagerInternal;
-import com.android.server.derpfest.AppLockManagerServiceInternal;
+import com.android.server.lessaosp.AppLockManagerServiceInternal;
 import com.android.server.pm.UserManagerService;
 import com.android.server.policy.PermissionPolicyInternal;
 import com.android.server.sdksandbox.SdkSandboxManagerLocal;

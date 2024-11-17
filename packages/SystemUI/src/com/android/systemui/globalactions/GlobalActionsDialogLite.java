@@ -31,7 +31,7 @@ import static com.android.internal.widget.LockPatternUtils.StrongAuthTracker.SOM
 import static com.android.internal.widget.LockPatternUtils.StrongAuthTracker.STRONG_AUTH_NOT_REQUIRED;
 import static com.android.internal.widget.LockPatternUtils.StrongAuthTracker.STRONG_AUTH_REQUIRED_AFTER_USER_LOCKDOWN;
 
-import static org.derpfest.util.PowerMenuConstants.*;
+import static org.lessaosp.util.PowerMenuConstants.*;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -168,10 +168,10 @@ import com.android.systemui.util.leak.RotationUtils;
 import com.android.systemui.util.settings.GlobalSettings;
 import com.android.systemui.util.settings.SecureSettings;
 
-import org.derpfest.app.LineageGlobalActions;
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.app.LineageGlobalActions;
+import org.lessaosp.providers.LESSAOSPSettings;
 
-import org.derpfest.util.PowerMenuUtils;
+import org.lessaosp.util.PowerMenuUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -202,7 +202,7 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
     private static final boolean SHOW_SILENT_TOGGLE = true;
 
     /* Valid settings for restart actions keys.
-     * see frameworks_derpfest config.xml config_restartActionsList */
+     * see frameworks_lessaosp config.xml config_restartActionsList */
     private static final String RESTART_ACTION_KEY_RESTART = "restart";
     private static final String RESTART_ACTION_KEY_RESTART_RECOVERY = "restart_recovery";
     private static final String RESTART_ACTION_KEY_RESTART_BOOTLOADER = "restart_bootloader";
@@ -477,7 +477,7 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
         mConfigurationController.addCallback(this);
 
         mContext.getContentResolver().registerContentObserver(
-                Settings.Secure.getUriFor(DerpFestSettings.Secure.POWER_MENU_ACTIONS), false,
+                Settings.Secure.getUriFor(LESSAOSPSettings.Secure.POWER_MENU_ACTIONS), false,
                 new ContentObserver(null) {
                     @Override
                     public void onChange(boolean selfChange) {
@@ -3384,11 +3384,11 @@ public class GlobalActionsDialogLite implements DialogInterface.OnDismissListene
 
     protected boolean shouldUseControlsLayout() {
         return Settings.Secure.getInt(
-                mContext.getContentResolver(), DerpFestSettings.Secure.POWER_MENU_TYPE, 0) == 0;
+                mContext.getContentResolver(), LESSAOSPSettings.Secure.POWER_MENU_TYPE, 0) == 0;
     }
 
     protected boolean useGridLayout() {
         return Settings.Secure.getInt(
-                mContext.getContentResolver(), DerpFestSettings.Secure.POWER_MENU_TYPE, 0) == 3;
+                mContext.getContentResolver(), LESSAOSPSettings.Secure.POWER_MENU_TYPE, 0) == 3;
     }
 }

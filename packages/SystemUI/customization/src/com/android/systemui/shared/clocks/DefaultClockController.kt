@@ -26,7 +26,7 @@ import android.view.ViewGroup
 import android.view.ViewGroup.MarginLayoutParams
 import android.widget.FrameLayout
 import androidx.annotation.VisibleForTesting
-import com.android.internal.util.derp.ThemeUtils
+import com.android.internal.util.lessaosp.ThemeUtils
 import com.android.systemui.customization.R
 import com.android.systemui.log.core.MessageBuffer
 import com.android.systemui.plugins.clocks.AlarmData

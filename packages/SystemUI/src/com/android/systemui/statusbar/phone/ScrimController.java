@@ -88,7 +88,7 @@ import com.android.systemui.util.wakelock.DelayedWakeLock;
 import com.android.systemui.util.wakelock.WakeLock;
 import com.android.systemui.wallpapers.data.repository.WallpaperRepository;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import kotlinx.coroutines.CoroutineDispatcher;
 

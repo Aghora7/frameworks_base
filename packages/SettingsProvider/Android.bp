@@ -25,13 +25,13 @@ android_library {
     srcs: [
         "src/**/*.java",
         "src/com/android/providers/settings/EventLogTags.logtags",
-        ":DerpFestSettingsProvider-sources",
+        ":LESSAOSPSettingsProvider-sources",
     ],
     libs: [
         "telephony-common",
         "ims-common",
         "unsupportedappusage",
-        "framework-derpfest",
+        "framework-lessaosp",
     ],
     static_libs: [
         "aconfig_new_storage_flags_lib",
@@ -43,7 +43,7 @@ android_library {
         "SettingsLibDisplayUtils",
     ],
     resource_zips: [
-        ":DerpFestSettingsProvider-res",
+        ":LESSAOSPSettingsProvider-res",
     ],
     platform_apis: true,
 }

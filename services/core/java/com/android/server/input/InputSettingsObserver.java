@@ -36,7 +36,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.ViewConfiguration;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.util.Map;
 import java.util.function.Consumer;
@@ -108,7 +108,7 @@ class InputSettingsObserver extends ContentObserver {
                 Map.entry(Settings.System.getUriFor(Settings.System.POINTER_SCALE),
                         (reason) -> updatePointerScaleFromSettings()),
                 Map.entry(Settings.System.getUriFor(
-                        DerpFestSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION),
+                        LESSAOSPSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION),
                         (reason) -> updateVolumeKeysRotation()));
     }
 
@@ -203,7 +203,7 @@ class InputSettingsObserver extends ContentObserver {
     private void updateVolumeKeysRotation() {
         mNative.setVolumeKeysRotation(
                 Settings.System.getIntForUser(mContext.getContentResolver(),
-                        DerpFestSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, 0,
+                        LESSAOSPSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, 0,
                         UserHandle.USER_CURRENT));
     }
 

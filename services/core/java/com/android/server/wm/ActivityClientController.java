@@ -115,7 +115,7 @@ import com.android.server.utils.quota.Category;
 import com.android.server.utils.quota.CountQuotaTracker;
 import com.android.server.vr.VrManagerInternal;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 /**
  * Server side implementation for the client activity to interact with system.
@@ -1786,7 +1786,7 @@ class ActivityClientController extends IActivityClientController.Stub {
     private int shouldFinishTaskOnBackPressed() {
         if (mShouldFinishTaskSettingCache == null) {
             mShouldFinishTaskSettingCache = Settings.System.getInt(mContext.getContentResolver(),
-                                                DerpFestSettings.System.TRANSIENT_TASK_MODE, 0);
+                                                LESSAOSPSettings.System.TRANSIENT_TASK_MODE, 0);
         }
         return mShouldFinishTaskSettingCache;
     }

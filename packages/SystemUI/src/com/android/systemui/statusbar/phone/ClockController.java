@@ -30,7 +30,7 @@ import com.android.systemui.res.R;
 import com.android.systemui.statusbar.phone.ui.StatusBarIconController;
 import com.android.systemui.statusbar.policy.Clock;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 public class ClockController {
 
@@ -57,7 +57,7 @@ public class ClockController {
 
         Uri iconHideList = Settings.Secure.getUriFor(StatusBarIconController.ICON_HIDE_LIST);
         Uri statusBarClock = Settings.System.getUriFor(
-                DerpFestSettings.System.STATUS_BAR_CLOCK);
+                LESSAOSPSettings.System.STATUS_BAR_CLOCK);
         ContentObserver contentObserver = new ContentObserver(null) {
             @Override
             public void onChange(boolean selfChange, @Nullable Uri uri) {
@@ -67,7 +67,7 @@ public class ClockController {
                                     StatusBarIconController.ICON_HIDE_LIST)).contains("clock");
                 } else if (statusBarClock.equals(uri)) {
                     mClockPosition = Settings.System.getInt(mContext.getContentResolver(),
-                            DerpFestSettings.System.STATUS_BAR_CLOCK, CLOCK_POSITION_LEFT);
+                            LESSAOSPSettings.System.STATUS_BAR_CLOCK, CLOCK_POSITION_LEFT);
                 }
                 updateActiveClock();
             }

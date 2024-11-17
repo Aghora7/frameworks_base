@@ -44,7 +44,7 @@ import com.android.systemui.doze.DozeLog;
 import com.android.systemui.doze.DozeReceiver;
 import com.android.systemui.keyguard.WakefulnessLifecycle;
 import com.android.systemui.keyguard.domain.interactor.DozeInteractor;
-import com.android.systemui.derpfest.pulselight.PulseLightNotifManager;
+import com.android.systemui.lessaosp.pulselight.PulseLightNotifManager;
 import com.android.systemui.res.R;
 import com.android.systemui.scene.shared.flag.SceneContainerFlag;
 import com.android.systemui.shade.NotificationShadeWindowViewController;
@@ -64,7 +64,7 @@ import com.android.systemui.util.Assert;
 import com.android.systemui.util.CopyOnLoopListenerSet;
 import com.android.systemui.util.IListenerSet;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import dagger.Lazy;
 
@@ -617,14 +617,14 @@ public final class DozeServiceHost implements DozeHost {
 
     private boolean isPulseLightEnabled() {
         return Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT) != 0;
+                LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT) != 0;
     }
 
     private boolean pulseLightOnlyWhenFaceDown() {
         int pulseLightFaceDownDefault = mContext.getResources().getBoolean(
                     com.android.internal.R.bool.config_edgeLightFaceDownEnabledByDefault) ? 1 : 0;
         return Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_FACE_DOWN,
+                LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_FACE_DOWN,
                 pulseLightFaceDownDefault, UserHandle.USER_CURRENT) != 0;
     }
 }

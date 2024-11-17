@@ -33,7 +33,7 @@ import com.android.systemui.dagger.SysUISingleton
 import com.android.systemui.shared.system.TaskStackChangeListener
 import com.android.systemui.shared.system.TaskStackChangeListeners
 
-import org.derpfest.providers.DerpFestSettings
+import org.lessaosp.providers.LESSAOSPSettings
 
 import java.util.Arrays
 import javax.inject.Inject
@@ -127,13 +127,13 @@ class GameSpaceManager @Inject constructor(
 
     fun shouldSuppressFullScreenIntent() =
         Settings.System.getIntForUser(context.contentResolver,
-            DerpFestSettings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT, 0,
+            LESSAOSPSettings.System.GAMESPACE_SUPPRESS_FULLSCREEN_INTENT, 0,
             UserHandle.USER_CURRENT) == 1 && isGameActive()
 
     private fun checkGameList(packageName: String?): String? {
         packageName ?: return null
         val games = Settings.System.getStringForUser(context.contentResolver,
-                DerpFestSettings.System.GAMESPACE_GAME_LIST,
+                LESSAOSPSettings.System.GAMESPACE_GAME_LIST,
                 UserHandle.USER_CURRENT)
         if (games.isNullOrEmpty())
             return null

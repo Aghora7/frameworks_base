@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2024 DerpFest
+     Copyright (C) 2024 LESSAOSP
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -75,9 +76,9 @@
     <string name="show_fourg_icon_title">4G-Symbol</string>
     <string name="show_fourg_icon_summary">4G-Symbol anstelle von LTE anzeigen</string>
 
-    <!-- DerpFest logo -->
-    <string name="derp_logo_title">DerpFest swag</string>
-    <string name="derp_logo_summary">Lass alle wissen, dass du DerpFest benutzt, wenn sie deinen Bildschirm sehen</string>
+    <!-- LESSAOSP logo -->
+    <string name="lessaosp_logo_title">LESSAOSP</string>
+    <string name="lessaosp_logo_summary">Thank you for using LESSAOSP</string>
 
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Beenden erzwingen?</string>

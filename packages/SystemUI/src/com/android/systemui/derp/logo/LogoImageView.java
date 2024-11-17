@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.derp.logo;
+package com.android.systemui.lessaosp.logo;
 
 import android.content.Context;
 import android.util.AttributeSet;

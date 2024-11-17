@@ -149,7 +149,7 @@ import com.android.server.power.feature.PowerManagerFlags;
 
 import dalvik.annotation.optimization.NeverCompile;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -1544,27 +1544,27 @@ public final class PowerManagerService extends SystemService
                 Settings.Global.DEVICE_DEMO_MODE),
                 false, mSettingsObserver, UserHandle.USER_SYSTEM);
 
-        // Register for DerpFest settings changes.
+        // Register for LESSAOSP settings changes.
         resolver.registerContentObserver(Settings.System.getUriFor(
-                DerpFestSettings.System.PROXIMITY_ON_WAKE),
+                LESSAOSPSettings.System.PROXIMITY_ON_WAKE),
                 false, mSettingsObserver, UserHandle.USER_ALL);
         resolver.registerContentObserver(Settings.System.getUriFor(
-                DerpFestSettings.System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED),
+                LESSAOSPSettings.System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED),
                 false, mSettingsObserver, UserHandle.USER_ALL);
         resolver.registerContentObserver(Settings.Secure.getUriFor(
-                DerpFestSettings.Secure.BUTTON_BRIGHTNESS),
+                LESSAOSPSettings.Secure.BUTTON_BRIGHTNESS),
                 false, mSettingsObserver, UserHandle.USER_ALL);
         resolver.registerContentObserver(Settings.Secure.getUriFor(
-                DerpFestSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT),
+                LESSAOSPSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT),
                 false, mSettingsObserver, UserHandle.USER_ALL);
         resolver.registerContentObserver(Settings.System.getUriFor(
-                DerpFestSettings.System.BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED),
+                LESSAOSPSettings.System.BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED),
                 false, mSettingsObserver, UserHandle.USER_ALL);
         resolver.registerContentObserver(Settings.Secure.getUriFor(
-                DerpFestSettings.Secure.KEYBOARD_BRIGHTNESS),
+                LESSAOSPSettings.Secure.KEYBOARD_BRIGHTNESS),
                 false, mSettingsObserver, UserHandle.USER_ALL);
         resolver.registerContentObserver(Settings.System.getUriFor(
-                DerpFestSettings.System.FORCE_SHOW_NAVBAR),
+                LESSAOSPSettings.System.FORCE_SHOW_NAVBAR),
                 false, mSettingsObserver, UserHandle.USER_ALL);
 
         // Register for broadcasts from other components of the system.
@@ -1679,7 +1679,7 @@ public final class PowerManagerService extends SystemService
         mTheaterModeEnabled = Settings.Global.getInt(mContext.getContentResolver(),
                 Settings.Global.THEATER_MODE_ON, 0) == 1;
         mWakeUpWhenPluggedOrUnpluggedSetting = Settings.System.getInt(resolver,
-                DerpFestSettings.System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                LESSAOSPSettings.System.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
                 (mWakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0)) == 1;
         mAlwaysOnEnabled =
                 mAmbientDisplayConfiguration.alwaysOnEnabledSetting(UserHandle.USER_CURRENT);
@@ -1701,24 +1701,24 @@ public final class PowerManagerService extends SystemService
         }
 
         mProximityWakeEnabled = Settings.System.getInt(resolver,
-                DerpFestSettings.System.PROXIMITY_ON_WAKE,
+                LESSAOSPSettings.System.PROXIMITY_ON_WAKE,
                 mProximityWakeEnabledByDefaultConfig ? 1 : 0) == 1;
 
         mButtonTimeout = Settings.Secure.getIntForUser(resolver,
-                DerpFestSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
+                LESSAOSPSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT,
                 DEFAULT_BUTTON_ON_DURATION, UserHandle.USER_CURRENT);
         mButtonBrightness = Settings.Secure.getFloatForUser(resolver,
-                DerpFestSettings.Secure.BUTTON_BRIGHTNESS, mButtonBrightnessDefault,
+                LESSAOSPSettings.Secure.BUTTON_BRIGHTNESS, mButtonBrightnessDefault,
                 UserHandle.USER_CURRENT);
         mButtonLightOnKeypressOnly = Settings.System.getIntForUser(resolver,
-                DerpFestSettings.System.BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED,
+                LESSAOSPSettings.System.BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED,
                 0, UserHandle.USER_CURRENT) == 1;
         mKeyboardBrightness = Settings.Secure.getFloatForUser(resolver,
-                DerpFestSettings.Secure.KEYBOARD_BRIGHTNESS, mKeyboardBrightnessDefault,
+                LESSAOSPSettings.Secure.KEYBOARD_BRIGHTNESS, mKeyboardBrightnessDefault,
                 UserHandle.USER_CURRENT);
 
         mForceNavbar = Settings.System.getIntForUser(resolver,
-                DerpFestSettings.System.FORCE_SHOW_NAVBAR,
+                LESSAOSPSettings.System.FORCE_SHOW_NAVBAR,
                 0, UserHandle.USER_CURRENT) == 1;
 
         mDirty |= DIRTY_SETTINGS;

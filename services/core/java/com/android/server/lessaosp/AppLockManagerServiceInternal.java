@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.server.derpfest;
+package com.android.server.lessaosp;
 
 import android.content.Intent;
 

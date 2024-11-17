@@ -131,7 +131,7 @@ import com.android.internal.app.IVoiceInteractor;
 import com.android.internal.protolog.common.ProtoLog;
 import com.android.server.LocalServices;
 import com.android.server.am.PendingIntentRecord;
-import com.android.server.derpfest.ParallelSpaceManagerServiceInternal;
+import com.android.server.lessaosp.ParallelSpaceManagerServiceInternal;
 import com.android.server.pm.InstantAppResolver;
 import com.android.server.pm.PackageArchiver;
 import com.android.server.power.ShutdownCheckPoints;

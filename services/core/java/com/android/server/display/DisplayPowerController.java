@@ -100,7 +100,7 @@ import com.android.server.lights.LightsManager;
 import com.android.server.lights.LogicalLight;
 import com.android.server.policy.WindowManagerPolicy;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.PrintWriter;
 import java.util.Objects;
@@ -1017,7 +1017,7 @@ final class DisplayPowerController implements AutomaticBrightnessController.Call
                     /* notifyForDescendants= */ false, mSettingsObserver, UserHandle.USER_CURRENT);
         }
         mContext.getContentResolver().registerContentObserver(
-                Settings.System.getUriFor(DerpFestSettings.System.AUTO_BRIGHTNESS_ONE_SHOT),
+                Settings.System.getUriFor(LESSAOSPSettings.System.AUTO_BRIGHTNESS_ONE_SHOT),
                 false /*notifyForDescendants*/, mSettingsObserver, UserHandle.USER_ALL);
         handleBrightnessModeChange();
     }
@@ -2472,7 +2472,7 @@ final class DisplayPowerController implements AutomaticBrightnessController.Call
 
     private boolean getAutoBrightnessOneShotSetting() {
         return Settings.System.getIntForUser(
-                mContext.getContentResolver(), DerpFestSettings.System.AUTO_BRIGHTNESS_ONE_SHOT,
+                mContext.getContentResolver(), LESSAOSPSettings.System.AUTO_BRIGHTNESS_ONE_SHOT,
                 0, UserHandle.USER_CURRENT) == 1;
     }
 

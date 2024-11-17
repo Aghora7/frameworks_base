@@ -345,7 +345,7 @@ import com.android.server.IoThread;
 import com.android.server.LocalServices;
 import com.android.server.SystemService;
 import com.android.server.job.JobSchedulerInternal;
-import com.android.server.derpfest.AppLockManagerServiceInternal;
+import com.android.server.lessaosp.AppLockManagerServiceInternal;
 import com.android.server.lights.LightsManager;
 import com.android.server.notification.GroupHelper.NotificationAttributes;
 import com.android.server.notification.ManagedServices.ManagedServiceInfo;
@@ -399,7 +399,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 import java.util.stream.Collectors;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 /** {@hide} */
 public class NotificationManagerService extends SystemService {
@@ -2119,7 +2119,7 @@ public class NotificationManagerService extends SystemService {
         private final Uri NOTIFICATION_RATE_LIMIT_URI
                 = Settings.Global.getUriFor(Settings.Global.MAX_NOTIFICATION_ENQUEUE_RATE);
         private final Uri NOTIFICATION_FORCE_NON_DISMISSIBLE_URI
-                = Settings.System.getUriFor(DerpFestSettings.System.NOTIFICATION_FORCE_NON_DISMISSIBLE);
+                = Settings.System.getUriFor(LESSAOSPSettings.System.NOTIFICATION_FORCE_NON_DISMISSIBLE);
         private final Uri NOTIFICATION_HISTORY_ENABLED
                 = Secure.getUriFor(Secure.NOTIFICATION_HISTORY_ENABLED);
         private final Uri NOTIFICATION_SHOW_MEDIA_ON_QUICK_SETTINGS_URI
@@ -2178,7 +2178,7 @@ public class NotificationManagerService extends SystemService {
             }
             if (uri == null || NOTIFICATION_FORCE_NON_DISMISSIBLE_URI.equals(uri)) {
                 mForceNonDismissible = Settings.System.getInt(resolver,
-                        DerpFestSettings.System.NOTIFICATION_FORCE_NON_DISMISSIBLE, 0) != 0;
+                        LESSAOSPSettings.System.NOTIFICATION_FORCE_NON_DISMISSIBLE, 0) != 0;
             }
             if (uri == null || NOTIFICATION_BADGING_URI.equals(uri)) {
                 mPreferencesHelper.updateBadgingEnabled();

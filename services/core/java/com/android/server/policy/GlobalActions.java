@@ -23,7 +23,7 @@ import com.android.server.LocalServices;
 import com.android.server.policy.WindowManagerPolicy.WindowManagerFuncs;
 import com.android.server.policy.GlobalActionsProvider;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 class GlobalActions implements GlobalActionsProvider.GlobalActionsListener {
 
@@ -68,7 +68,7 @@ class GlobalActions implements GlobalActionsProvider.GlobalActionsListener {
         mDeviceProvisioned = deviceProvisioned;
         mShowing = true;
         if (mGlobalActionsAvailable && Settings.Secure.getInt(mContext.getContentResolver(),
-                DerpFestSettings.Secure.POWER_MENU_TYPE, 0) != 4) {
+                LESSAOSPSettings.Secure.POWER_MENU_TYPE, 0) != 4) {
             mHandler.postDelayed(mShowTimeout, 5000);
             mGlobalActionsProvider.showGlobalActions();
         } else {

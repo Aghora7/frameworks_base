@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.derpfest.pulselight;
+package com.android.systemui.lessaosp.pulselight;
 
 import android.annotation.NonNull;
 import android.content.Context;

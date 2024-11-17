@@ -26,7 +26,7 @@ import com.android.systemui.dagger.SysUISingleton
 import com.android.systemui.plugins.FalsingManager
 import com.android.systemui.plugins.statusbar.StatusBarStateController
 import com.android.systemui.statusbar.StatusBarState
-import org.derpfest.providers.DerpFestSettings
+import org.lessaosp.providers.LESSAOSPSettings
 import javax.inject.Inject
 
 @SysUISingleton
@@ -44,13 +44,13 @@ class QQSGestureListener @Inject constructor(
         val contentObserver = object : ContentObserver(null) {
             override fun onChange(selfChange: Boolean) {
                 doubleTapToSleepEnabled = Settings.System.getInt(
-                        context.contentResolver, DerpFestSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
+                        context.contentResolver, LESSAOSPSettings.System.DOUBLE_TAP_SLEEP_GESTURE,
                         if (context.resources.getBoolean(com.android.internal.
                                 R.bool.config_dt2sGestureEnabledByDefault)) 1 else 0) != 0
             }
         }
         context.contentResolver.registerContentObserver(
-                Settings.System.getUriFor(DerpFestSettings.System.DOUBLE_TAP_SLEEP_GESTURE),
+                Settings.System.getUriFor(LESSAOSPSettings.System.DOUBLE_TAP_SLEEP_GESTURE),
                 false, contentObserver)
         contentObserver.onChange(true)
 

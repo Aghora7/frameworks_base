@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package com.android.server.derp;
+package com.android.server.lessaosp;
 
 import android.content.Context;
 import com.android.server.SystemService;
 
-import com.android.internal.util.derp.DeviceConfigUtils;
+import com.android.internal.util.lessaosp.DeviceConfigUtils;
 
 public class CustomDeviceConfigService extends SystemService {
 

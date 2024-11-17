@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util.derp;
+package com.android.internal.util.lessaosp;
 
 import android.content.res.Resources;
 import android.provider.Settings;

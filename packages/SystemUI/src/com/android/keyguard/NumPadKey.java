@@ -39,7 +39,7 @@ import com.android.settingslib.Utils;
 import com.android.systemui.res.R;
 
 import android.provider.Settings;
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 /**
  * Viewgroup for the bouncer numpad button, specifically for digits.
@@ -137,7 +137,7 @@ public class NumPadKey extends ViewGroup implements NumPadAnimationListener {
 
     private void updateText() {
         boolean scramblePin = (Settings.System.getInt(getContext().getContentResolver(),
-                DerpFestSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, 0) == 1);
+                LESSAOSPSettings.System.LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, 0) == 1);
         if (mDigit >= 0) {
             mDigitText.setText(Integer.toString(mDigit));
             if (sKlondike == null) {

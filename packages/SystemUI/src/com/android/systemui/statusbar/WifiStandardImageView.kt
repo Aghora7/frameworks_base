@@ -27,7 +27,7 @@ import android.provider.Settings
 import android.util.AttributeSet
 import android.widget.ImageView
 import com.android.systemui.res.R
-import org.derpfest.providers.DerpFestSettings.Secure.SHOW_WIFI_STANDARD_ICON
+import org.lessaosp.providers.LESSAOSPSettings.Secure.SHOW_WIFI_STANDARD_ICON
 
 class WifiStandardImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

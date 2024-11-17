@@ -144,7 +144,7 @@ import com.android.server.SystemConfig;
 import com.android.server.Watchdog;
 import com.android.server.am.ActivityManagerService.ProcessChangeItem;
 import com.android.server.compat.PlatformCompat;
-import com.android.server.derpfest.ParallelSpaceManagerServiceInternal;
+import com.android.server.lessaosp.ParallelSpaceManagerServiceInternal;
 import com.android.server.pm.pkg.AndroidPackage;
 import com.android.server.pm.pkg.PackageStateInternal;
 import com.android.server.wm.ActivityServiceConnectionsHolder;

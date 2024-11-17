@@ -491,7 +491,7 @@ import com.android.server.wm.WindowManagerInternal;
 import com.android.server.wm.WindowManagerService;
 import com.android.server.wm.WindowProcessController;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import dalvik.annotation.optimization.NeverCompile;
 import dalvik.system.VMRuntime;
@@ -21230,14 +21230,14 @@ public class ActivityManagerService extends IActivityManager.Stub
 
         public void registerObserver() {
             mContext.getContentResolver().registerContentObserver(
-                    Settings.System.getUriFor(DerpFestSettings.System.THREE_FINGER_GESTURE),
+                    Settings.System.getUriFor(LESSAOSPSettings.System.THREE_FINGER_GESTURE),
                     false, this, UserHandle.USER_ALL);
             update();
         }
 
         private void update() {
             mIsSwipeToScreenshotEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
-                    DerpFestSettings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
+                    LESSAOSPSettings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
         }
 
         public void onChange(boolean selfChange) {

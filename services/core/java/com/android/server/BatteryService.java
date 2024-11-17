@@ -76,8 +76,8 @@ import com.android.server.lights.LogicalLight;
 import motorola.hardware.health.V1_0.BatteryProperties;
 import motorola.hardware.health.V1_0.IMotHealth;
 
-import org.derpfest.notification.LedValues;
-import org.derpfest.notification.LineageBatteryLights;
+import org.lessaosp.notification.LedValues;
+import org.lessaosp.notification.LineageBatteryLights;
 
 import java.io.File;
 import java.io.FileDescriptor;

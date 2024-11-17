@@ -100,7 +100,7 @@ import com.android.server.LocalServices;
 
 import com.google.android.collect.Maps;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -280,7 +280,7 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
         mDeps.registerLocalService(new LocalService());
 
         mContext.getContentResolver().registerContentObserver(
-                Settings.Global.getUriFor(DerpFestSettings.Global.CLEARTEXT_NETWORK_POLICY),
+                Settings.Global.getUriFor(LESSAOSPSettings.Global.CLEARTEXT_NETWORK_POLICY),
                 false,
                 new ContentObserver(mDaemonHandler) {
                     @Override
@@ -1227,7 +1227,7 @@ public class NetworkManagementService extends INetworkManagementService.Stub {
     private void setGlobalCleartextNetworkPolicy() {
         int cleartextNetworkPolicy = Settings.Global.getInt(
                 mContext.getContentResolver(),
-                DerpFestSettings.Global.CLEARTEXT_NETWORK_POLICY,
+                LESSAOSPSettings.Global.CLEARTEXT_NETWORK_POLICY,
                 StrictMode.NETWORK_POLICY_INVALID);
         SystemProperties.set(StrictMode.GLOBAL_CLEARTEXT_PROPERTY,
                 String.valueOf(cleartextNetworkPolicy));

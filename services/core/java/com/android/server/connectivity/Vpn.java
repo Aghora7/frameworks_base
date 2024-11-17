@@ -188,7 +188,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 /**
  * @hide
@@ -781,7 +781,7 @@ public class Vpn {
      */
     public synchronized boolean isGlobalVpn() {
         final String globalVpnPkg = Settings.Global.getString(mContext.getContentResolver(),
-                DerpFestSettings.Global.GLOBAL_VPN_APP);
+                LESSAOSPSettings.Global.GLOBAL_VPN_APP);
         return mUserId == UserHandle.USER_SYSTEM && mPackage.equals(globalVpnPkg);
     }
 
@@ -2429,7 +2429,7 @@ public class Vpn {
         Binder.withCleanCallingIdentity(() -> {
             if (mUserId != UserHandle.USER_SYSTEM && !TextUtils.isEmpty(
                     Settings.Global.getString(mContext.getContentResolver(),
-                            DerpFestSettings.Global.GLOBAL_VPN_APP))) {
+                            LESSAOSPSettings.Global.GLOBAL_VPN_APP))) {
                 throw new SecurityException("Secondary users cannot configure VPNs when" +
                         " global vpn is set");
             }

@@ -80,7 +80,7 @@ import com.android.systemui.user.domain.interactor.SelectedUserInteractor;
 
 import dagger.Lazy;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.PrintWriter;
 import java.lang.ref.Reference;
@@ -267,7 +267,7 @@ public class NotificationShadeWindowControllerImpl implements NotificationShadeW
                 Settings.System.ACCELEROMETER_ROTATION, 0) != 0;
         boolean enableLockScreenRotation =
                 Settings.System.getInt(mContext.getContentResolver(),
-                DerpFestSettings.System.LOCKSCREEN_ROTATION, 0) != 0;
+                LESSAOSPSettings.System.LOCKSCREEN_ROTATION, 0) != 0;
         return mKeyguardStateController.isKeyguardScreenRotationAllowed()
                 && (enableLockScreenRotation && enableAccelerometerRotation);
     }
@@ -1059,7 +1059,7 @@ public class NotificationShadeWindowControllerImpl implements NotificationShadeW
                     Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION),
                     false, this);
             context.getContentResolver().registerContentObserver(
-                    Settings.System.getUriFor(DerpFestSettings.System.LOCKSCREEN_ROTATION),
+                    Settings.System.getUriFor(LESSAOSPSettings.System.LOCKSCREEN_ROTATION),
                     false, this);
         }
 

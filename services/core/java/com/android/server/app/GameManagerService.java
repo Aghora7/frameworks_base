@@ -106,7 +106,7 @@ import com.android.server.SystemService.TargetUser;
 import com.android.server.wm.ActivityTaskManagerInternal;
 import com.android.server.wm.CompatScaleProvider;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -1578,7 +1578,7 @@ public final class GameManagerService extends IGameManagerService.Stub {
                 }
             }
         }, new IntentFilter(Intent.ACTION_SHUTDOWN));
-        // Start to observe our DerpFestSettings.Secure.GAME_OVERLAY
+        // Start to observe our LESSAOSPSettings.Secure.GAME_OVERLAY
         // after boot completed.
         new SettingsObserver(mHandler);
         Slog.v(TAG, "Game loading power mode OFF (game manager service start/restart)");
@@ -2370,19 +2370,19 @@ public final class GameManagerService extends IGameManagerService.Stub {
             super(handler);
             mContentResolver = mContext.getContentResolver();
             mContentResolver.registerContentObserver(Settings.Secure.getUriFor(
-                    DerpFestSettings.Secure.GAME_OVERLAY), false, this,
+                    LESSAOSPSettings.Secure.GAME_OVERLAY), false, this,
                     UserHandle.USER_ALL);
             }
 
         @Override
         public void onChange(boolean selfChange, Uri uri) {
             String newValue = Settings.Secure.getStringForUser(mContentResolver,
-                    DerpFestSettings.Secure.GAME_OVERLAY, UserHandle.USER_CURRENT);
+                    LESSAOSPSettings.Secure.GAME_OVERLAY, UserHandle.USER_CURRENT);
             if (newValue == null) return;
             // We write key and value of the device_config property as a single string
             // from our GameSpace.
             // ';;' is the separator betweeen key and value.
-            // Example: org.derpfest.game;;mode=2,downscaleFactor=0.7:mode=3,downscaleFactor=0.8
+            // Example: org.lessaosp.game;;mode=2,downscaleFactor=0.7:mode=3,downscaleFactor=0.8
             // So split the key and value from the string
             // and set the device_config propery.
             String[] parsedValues = newValue.split(";;");

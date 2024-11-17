@@ -69,7 +69,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 
 import com.android.internal.graphics.ColorUtils;
-import org.derpfest.app.ParallelSpaceManager;
+import org.lessaosp.app.ParallelSpaceManager;
 import com.android.systemui.CoreStartable;
 import com.android.systemui.Dumpable;
 import com.android.systemui.broadcast.BroadcastDispatcher;
@@ -97,7 +97,7 @@ import com.android.systemui.util.settings.SecureSettings;
 import com.google.ux.material.libmonet.dynamiccolor.DynamicColor;
 import com.google.ux.material.libmonet.dynamiccolor.MaterialDynamicColors;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -383,7 +383,7 @@ public class ThemeOverlayController implements CoreStartable, Dumpable {
         public void onReceive(Context context, Intent intent) {
             boolean newProfile = Intent.ACTION_PROFILE_ADDED.equals(intent.getAction());
             boolean isParallelSpace =
-                    org.derpfest.content.Intent.ACTION_PARALLEL_SPACE_CHANGED.equals(intent.getAction());
+                    org.lessaosp.content.Intent.ACTION_PARALLEL_SPACE_CHANGED.equals(intent.getAction());
             if (isParallelSpace) {
                 if (DEBUG) Log.d(TAG, "Updating overlays for parallel user added.");
                 reevaluateSystemTheme(true /* forceReload */);
@@ -469,7 +469,7 @@ public class ThemeOverlayController implements CoreStartable, Dumpable {
         if (DEBUG) Log.d(TAG, "Start");
         final IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_PROFILE_ADDED);
-        filter.addAction(org.derpfest.content.Intent.ACTION_PARALLEL_SPACE_CHANGED);
+        filter.addAction(org.lessaosp.content.Intent.ACTION_PARALLEL_SPACE_CHANGED);
         filter.addAction(Intent.ACTION_WALLPAPER_CHANGED);
         mBroadcastDispatcher.registerReceiver(mBroadcastReceiver, filter, mMainExecutor,
                 UserHandle.ALL);
@@ -506,7 +506,7 @@ public class ThemeOverlayController implements CoreStartable, Dumpable {
         });
 
         mSecureSettings.registerContentObserverForUserSync(
-                Settings.Secure.getUriFor(DerpFestSettings.Secure.BERRY_BLACK_THEME),
+                Settings.Secure.getUriFor(LESSAOSPSettings.Secure.BERRY_BLACK_THEME),
                 false,
                 new ContentObserver(mBgHandler) {
                     @Override
@@ -863,7 +863,7 @@ public class ThemeOverlayController implements CoreStartable, Dumpable {
         }
 
         boolean isBlackMode = (Settings.Secure.getIntForUser(
-                mContext.getContentResolver(), DerpFestSettings.Secure.BERRY_BLACK_THEME,
+                mContext.getContentResolver(), LESSAOSPSettings.Secure.BERRY_BLACK_THEME,
                 0, currentUser) == 1) && isNightMode();
 
         // Compatibility with legacy themes, where full packages were defined, instead of just

@@ -65,7 +65,7 @@ import com.android.systemui.tuner.TunerService;
 import com.android.systemui.tuner.TunerService.Tunable;
 
 import android.provider.Settings;
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -152,15 +152,15 @@ public class Clock extends TextView implements
                 0, 0);
         try {
             mAmPmStyle = Settings.System.getInt(mContext.getContentResolver(),
-                    DerpFestSettings.System.STATUS_BAR_AM_PM, AM_PM_STYLE_GONE);
+                    LESSAOSPSettings.System.STATUS_BAR_AM_PM, AM_PM_STYLE_GONE);
             mContentObserver = new ContentObserver(null) {
                 @Override
                 public void onChange(boolean selfChange, Uri uri) {
                     if (Settings.System.getUriFor(
-                            DerpFestSettings.System.STATUS_BAR_AM_PM).equals(uri)) {
+                            LESSAOSPSettings.System.STATUS_BAR_AM_PM).equals(uri)) {
                         mAmPmStyle = Settings.System.getInt(
                                 mContext.getContentResolver(),
-                                DerpFestSettings.System.STATUS_BAR_AM_PM, AM_PM_STYLE_GONE);
+                                LESSAOSPSettings.System.STATUS_BAR_AM_PM, AM_PM_STYLE_GONE);
                         // Force refresh of dependent variables.
                         mContentDescriptionFormatString = "";
                         mDateTimePatternGenerator = null;
@@ -168,10 +168,10 @@ public class Clock extends TextView implements
                             updateClock(true);
                         });
                     } else if (Settings.System.getUriFor(
-                            DerpFestSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE).equals(uri)) {
+                            LESSAOSPSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE).equals(uri)) {
                         handleTaskStackListener(
                                 Settings.System.getInt(mContext.getContentResolver(),
-                                        DerpFestSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE, 0) != 0);
+                                        LESSAOSPSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE, 0) != 0);
                     }
                 }
             };
@@ -240,14 +240,14 @@ public class Clock extends TextView implements
                     Dependency.get(Dependency.TIME_TICK_HANDLER), UserHandle.ALL);
             Dependency.get(TunerService.class).addTunable(this, CLOCK_SECONDS);
             mContext.getContentResolver().registerContentObserver(
-                    Settings.System.getUriFor(DerpFestSettings.System.STATUS_BAR_AM_PM),
+                    Settings.System.getUriFor(LESSAOSPSettings.System.STATUS_BAR_AM_PM),
                     false, mContentObserver);
             mContext.getContentResolver().registerContentObserver(
                     Settings.System.getUriFor(
-                            DerpFestSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE),
+                            LESSAOSPSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE),
                     false, mContentObserver);
             mContentObserver.onChange(false, Settings.System.getUriFor(
-                    DerpFestSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE));
+                    LESSAOSPSettings.System.STATUS_BAR_CLOCK_AUTO_HIDE));
             mCommandQueue.addCallback(this);
             mUserTracker.addCallback(mUserChangedCallback, mContext.getMainExecutor());
             mCurrentUserId = mUserTracker.getUserId();

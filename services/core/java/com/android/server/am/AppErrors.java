@@ -656,12 +656,12 @@ class AppErrors {
 
             // Add paste content for MkrBin option
             String devFP = SystemProperties.get("ro.vendor.build.fingerprint", "");
-            String derpVers = SystemProperties.get("ro.derp.version", "");
+            String lessaospVers = SystemProperties.get("ro.lessaosp.version", "");
             String boardName = SystemProperties.get("ro.product.board", "");
             data.paste = "time: " + timeMillis + "\n" +
             "device fp:" + devFP + "\n" +
             "product board:" + boardName + "\n" +
-            "derpfest vers:" + derpVers + "\n" +
+            "lessaosp vers:" + lessaospVers + "\n" +
             "msg: " + longMsg + "\n" +
             "stacktrace: " + stackTrace;
           

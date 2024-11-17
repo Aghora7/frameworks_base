@@ -524,14 +524,14 @@ android_library {
         "androidx.compose.animation_animation-graphics",
         "androidx.lifecycle_lifecycle-viewmodel-compose",
         "device_policy_aconfig_flags_lib",
-        "framework-derpfest.static",
+        "framework-lessaosp.static",
         "bcsmartspace-google",
     ],
     libs: [
         "keepanno-annotations",
     ],
     manifest: "AndroidManifest.xml",
-    additional_manifests: ["DerpFestManifest.xml"],
+    additional_manifests: ["LESSAOSPManifest.xml"],
 
     javacflags: [
         "-Adagger.fastInit=enabled",

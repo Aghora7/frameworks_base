@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.derp.logo;
+package com.android.systemui.lessaosp.logo;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -130,7 +130,7 @@ public abstract class LogoImage extends ImageView implements DarkReceiver {
         switch (mLogoStyle) {
             case 0:
             default:
-                drawable = mContext.getResources().getDrawable(R.drawable.ic_derp_logo);
+                drawable = mContext.getResources().getDrawable(R.drawable.ic_lessaosp_logo);
                 break;
             case 1:
                 drawable = mContext.getResources().getDrawable(R.drawable.ic_android_logo);

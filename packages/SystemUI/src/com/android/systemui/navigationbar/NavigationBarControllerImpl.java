@@ -65,7 +65,7 @@ import com.android.systemui.util.settings.SecureSettings;
 import com.android.wm.shell.back.BackAnimation;
 import com.android.wm.shell.pip.Pip;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import dalvik.annotation.optimization.NeverCompile;
 
@@ -248,7 +248,7 @@ public class NavigationBarControllerImpl implements
     private boolean shouldCreateNavBarAndTaskBar(Context context, int displayId) {
         if (displayId == mDisplayTracker.getDefaultDisplayId() &&
                 Settings.System.getIntForUser(context.getContentResolver(),
-                        DerpFestSettings.System.FORCE_SHOW_NAVBAR, 0,
+                        LESSAOSPSettings.System.FORCE_SHOW_NAVBAR, 0,
                         UserHandle.USER_CURRENT) == 1) {
             return true;
         }

@@ -178,7 +178,7 @@ import com.android.systemui.util.time.SystemClock;
 import com.android.systemui.wallpapers.data.repository.WallpaperRepository;
 import com.android.wm.shell.keyguard.KeyguardTransitions;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import dagger.Lazy;
 
@@ -1914,7 +1914,7 @@ public class KeyguardViewMediator implements CoreStartable, Dumpable,
 
         // From Global Settings
         final long timeout = Settings.Global.getLong(cr,
-                DerpFestSettings.Global.DEVICE_REBOOT_TIMEOUT,
+                LESSAOSPSettings.Global.DEVICE_REBOOT_TIMEOUT,
                 KEYGUARD_REBOOT_AFTER_DELAY_DEFAULT);
 
         return timeout;

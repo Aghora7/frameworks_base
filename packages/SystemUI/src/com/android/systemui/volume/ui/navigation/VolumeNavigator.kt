@@ -36,7 +36,7 @@ import com.android.systemui.volume.panel.domain.interactor.VolumePanelGlobalStat
 import com.android.systemui.volume.panel.ui.VolumePanelUiEvent
 import com.android.systemui.volume.panel.ui.composable.VolumePanelRoot
 import com.android.systemui.volume.panel.ui.viewmodel.VolumePanelViewModel
-import org.derpfest.providers.DerpFestSettings
+import org.lessaosp.providers.LESSAOSPSettings
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 import kotlinx.coroutines.CoroutineScope
@@ -96,7 +96,7 @@ constructor(
                 volumePanelFactory.create(aboveStatusBar = true, view = null)
             VolumePanelRoute.APP_VOLUME_PANEL ->
                 activityStarter.startActivity(
-                    /* intent= */ Intent(DerpFestSettings.Panel.ACTION_APP_VOLUME),
+                    /* intent= */ Intent(LESSAOSPSettings.Panel.ACTION_APP_VOLUME),
                     /* dismissShade= */ true
                 )
         }

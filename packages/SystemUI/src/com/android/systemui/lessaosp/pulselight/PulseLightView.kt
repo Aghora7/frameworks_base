@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.systemui.derpfest.pulselight
+package com.android.systemui.lessaosp.pulselight
 
 import android.animation.Animator
 import android.animation.ValueAnimator
@@ -36,8 +36,8 @@ import com.android.settingslib.Utils
 import com.android.systemui.people.PeopleSpaceUtils
 import com.android.systemui.res.R
 
-import org.derpfest.hardware.LineageHardwareManager
-import org.derpfest.providers.DerpFestSettings
+import org.lessaosp.hardware.LineageHardwareManager
+import org.lessaosp.providers.LESSAOSPSettings
 
 class PulseLightView @JvmOverloads constructor(
     context: Context?,
@@ -117,17 +117,17 @@ class PulseLightView @JvmOverloads constructor(
         isVisible = true
         val lightDuration = Settings.Secure.getIntForUser(
             context.contentResolver,
-            DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_DURATION, 2,
+            LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_DURATION, 2,
             UserHandle.USER_CURRENT
         ) * 1000L
         val repeat = Settings.Secure.getIntForUser(
             context.contentResolver,
-            DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, 0,
+            LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_REPEAT_COUNT, 0,
             UserHandle.USER_CURRENT
         )
         val width = Settings.Secure.getIntForUser(
             context.contentResolver,
-            DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_WIDTH, 125,
+            LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_WIDTH, 125,
             UserHandle.USER_CURRENT
         )
         val color = getLightColor(notificationPackageName)
@@ -172,7 +172,7 @@ class PulseLightView @JvmOverloads constructor(
     private fun getLightColor(notificationPackageName: String): Int {
         val colorMode = Settings.Secure.getIntForUser(
             context.contentResolver,
-            DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_COLOR_MODE, 1,
+            LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_COLOR_MODE, 1,
             UserHandle.USER_CURRENT
         )
         return when (colorMode) {
@@ -199,7 +199,7 @@ class PulseLightView @JvmOverloads constructor(
             else -> {
                 Settings.Secure.getIntForUser(
                     context.contentResolver,
-                    DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_COLOR, -9777409 /* hex - #FF6ACEFF */,
+                    LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_COLOR, -9777409 /* hex - #FF6ACEFF */,
                     UserHandle.USER_CURRENT
                 )
             }
@@ -234,7 +234,7 @@ class PulseLightView @JvmOverloads constructor(
         // private const val COLOR_MODE_MANUAL = 2 (not used here)
 
         private const val PULSE_AMBIENT_LIGHT_FACE_DOWN =
-                DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_FACE_DOWN
+                LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_FACE_DOWN
     }
 
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.systemui.derpfest.pulselight
+package com.android.systemui.lessaosp.pulselight
 
 import android.app.Notification
 import android.app.NotificationManager
@@ -31,7 +31,7 @@ import com.android.systemui.res.R
 import com.android.systemui.statusbar.notification.collection.NotificationEntry
 import com.android.systemui.statusbar.notification.interruption.NotificationInterruptStateProvider
 
-import org.derpfest.providers.DerpFestSettings
+import org.lessaosp.providers.LESSAOSPSettings
 
 import javax.inject.Inject
 
@@ -193,13 +193,13 @@ class PulseLightNotifManager @Inject constructor(
     }
 
     companion object {
-        private const val PULSE_AMBIENT_LIGHT = DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT
+        private const val PULSE_AMBIENT_LIGHT = LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT
         private const val PULSE_AMBIENT_LIGHT_DURATION =
-                DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_DURATION
+                LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_DURATION
         private const val PULSE_AMBIENT_LIGHT_REPEAT_COUNT =
-                DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_REPEAT_COUNT
+                LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_REPEAT_COUNT
         private const val PULSE_AMBIENT_LIGHT_FACE_DOWN =
-                DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_FACE_DOWN
+                LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_FACE_DOWN
     }
 
 }

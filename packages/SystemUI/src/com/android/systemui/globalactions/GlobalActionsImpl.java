@@ -27,7 +27,7 @@ import com.android.systemui.statusbar.policy.DeviceProvisionedController;
 import com.android.systemui.statusbar.policy.ExtensionController;
 import com.android.systemui.statusbar.policy.KeyguardStateController;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import javax.inject.Inject;
 
@@ -80,7 +80,7 @@ public class GlobalActionsImpl implements GlobalActions, CommandQueue.Callbacks 
     public void showGlobalActions(GlobalActionsManager manager) {
         if (mDisabled) return;
         fullDialog = Settings.Secure.getInt(
-                mContext.getContentResolver(), DerpFestSettings.Secure.POWER_MENU_TYPE, 0) == 1;
+                mContext.getContentResolver(), LESSAOSPSettings.Secure.POWER_MENU_TYPE, 0) == 1;
         GlobalActionsDialogLite globalActionsDialog =
                 fullDialog ? mGlobalActionsDialog : mGlobalActionsDialogLite;
         globalActionsDialog.showOrHideDialog(mKeyguardStateController.isShowing(),

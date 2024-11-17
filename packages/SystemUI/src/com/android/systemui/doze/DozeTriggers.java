@@ -62,7 +62,7 @@ import com.android.systemui.util.sensors.ProximitySensor;
 import com.android.systemui.util.settings.SecureSettings;
 import com.android.systemui.util.wakelock.WakeLock;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.PrintWriter;
 import java.util.Optional;
@@ -282,7 +282,7 @@ public class DozeTriggers implements DozeMachine.Part {
 
     private boolean isPulseLightEnabled() {
         return Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT,
+                LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT,
                 0, UserHandle.USER_CURRENT) != 0;
     }
 
@@ -290,7 +290,7 @@ public class DozeTriggers implements DozeMachine.Part {
         int pulseLightFaceDownDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_edgeLightFaceDownEnabledByDefault) ? 1 : 0;
         return Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                DerpFestSettings.Secure.PULSE_AMBIENT_LIGHT_FACE_DOWN,
+                LESSAOSPSettings.Secure.PULSE_AMBIENT_LIGHT_FACE_DOWN,
                 pulseLightFaceDownDefault, UserHandle.USER_CURRENT) != 0;
     }
 

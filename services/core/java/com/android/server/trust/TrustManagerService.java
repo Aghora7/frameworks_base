@@ -86,7 +86,7 @@ import com.android.internal.util.DumpUtils;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.server.LocalServices;
 import com.android.server.SystemService;
-import com.android.server.derpfest.AppLockManagerServiceInternal;
+import com.android.server.lessaosp.AppLockManagerServiceInternal;
 import com.android.server.servicewatcher.CurrentUserServiceSupplier;
 import com.android.server.servicewatcher.ServiceWatcher;
 import com.android.server.utils.Slogf;

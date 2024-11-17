@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.derpfest.pulselight
+package com.android.systemui.lessaosp.pulselight
 
 import com.android.systemui.kosmos.Kosmos
 import com.android.systemui.kosmos.Kosmos.Fixture

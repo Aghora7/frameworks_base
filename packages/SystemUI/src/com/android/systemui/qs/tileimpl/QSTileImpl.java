@@ -73,7 +73,7 @@ import com.android.systemui.qs.QsEventLogger;
 import com.android.systemui.qs.SideLabelTileLayout;
 import com.android.systemui.qs.logging.QSLogger;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 import java.io.PrintWriter;
 
@@ -326,7 +326,7 @@ public abstract class QSTileImpl<TState extends State> implements QSTile, Lifecy
         mUiEventLogger.logWithInstanceId(event, 0, getMetricsSpec(), getInstanceId());
         if (!keyguardManager.isKeyguardLocked() ||
                 Settings.Secure.getInt(mContext.getContentResolver(),
-                DerpFestSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN, 1) == 1) {
+                LESSAOSPSettings.Secure.QS_TILES_TOGGLEABLE_ON_LOCK_SCREEN, 1) == 1) {
             mHandler.obtainMessage(message, eventId, 0, expandable).sendToTarget();
         }
     }

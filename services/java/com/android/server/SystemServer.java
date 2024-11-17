@@ -154,7 +154,7 @@ import com.android.server.contentsuggestions.ContentSuggestionsManagerService;
 import com.android.server.contextualsearch.ContextualSearchManagerService;
 import com.android.server.coverage.CoverageService;
 import com.android.server.cpu.CpuMonitorService;
-import com.android.server.derp.CustomDeviceConfigService;
+import com.android.server.lessaosp.CustomDeviceConfigService;
 import com.android.server.credentials.CredentialManagerService;
 import com.android.server.criticalevents.CriticalEventLog;
 import com.android.server.devicepolicy.DevicePolicyManagerService;
@@ -311,7 +311,7 @@ import java.util.TreeSet;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Future;
 
-import org.derpfest.server.DerpFestSystemServer;
+import org.lessaosp.server.LESSAOSPSystemServer;
 
 /**
  * Entry point to {@code system_server}.
@@ -827,8 +827,8 @@ public final class SystemServer implements Dumpable {
                         uptimeMillis);
             }
 
-            Slog.i("DerpFest",
-                "Welcome to DerpFest! We believe that you'll love it. " +
+            Slog.i("LESSAOSP",
+                "Welcome to LESSAOSP! We believe that you'll love it. " +
                 "Ready to... uh... Vanilla Ice Cream!");
 
             // In case the runtime switched since last boot (such as when
@@ -2870,8 +2870,8 @@ public final class SystemServer implements Dumpable {
         mSystemServiceManager.startService(TracingServiceProxy.class);
         t.traceEnd();
 
-        t.traceBegin("startDerpFestServices");
-        DerpFestSystemServer.startServices(context, mSystemServiceManager);
+        t.traceBegin("startLESSAOSPServices");
+        LESSAOSPSystemServer.startServices(context, mSystemServiceManager);
         t.traceEnd();
 
         // It is now time to start up the app processes...

@@ -74,7 +74,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.List;
 
-import org.derpfest.providers.DerpFestSettings;
+import org.lessaosp.providers.LESSAOSPSettings;
 
 /**
  * Service that tracks and manages VPNs, and backs the VpnService and VpnManager APIs.
@@ -919,7 +919,7 @@ public class VpnManagerService extends IVpnManager.Stub {
             if (TextUtils.equals(vpn.getPackage(), packageName) && userId == UserHandle.USER_SYSTEM
                     && vpn.isGlobalVpn()) {
                 Settings.Global.putString(mContext.getContentResolver(),
-                        DerpFestSettings.Global.GLOBAL_VPN_APP, "");
+                        LESSAOSPSettings.Global.GLOBAL_VPN_APP, "");
             }
         }
     }
